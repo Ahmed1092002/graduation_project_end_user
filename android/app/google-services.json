@@ -1,13 +1,32 @@
 {
   "project_info": {
-    "project_number": "323139323227",
-    "project_id": "refugee-d38eb",
-    "storage_bucket": "refugee-d38eb.appspot.com"
+    "project_number": "457416420906",
+    "project_id": "newjop-1e222",
+    "storage_bucket": "newjop-1e222.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:323139323227:android:3cfd8c5f1e6145efe8867e",
+        "mobilesdk_app_id": "1:457416420906:android:58b2f355495a68a9371d53",
+        "android_client_info": {
+          "package_name": "com.example.graduation_project_admin"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBBPGpMPisf55HAcReMQN_u9qEtFJ5qWoA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:457416420906:android:83ef69e1fef4aa78371d53",
         "android_client_info": {
           "package_name": "com.example.graduation_project_end_user"
         }
@@ -15,7 +34,45 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyCA_MGPRfagMsUcJNdRtgL0XNfHgEQfnBA"
+          "current_key": "AIzaSyBBPGpMPisf55HAcReMQN_u9qEtFJ5qWoA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:457416420906:android:802198182d4c62e3371d53",
+        "android_client_info": {
+          "package_name": "com.example.jop"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBBPGpMPisf55HAcReMQN_u9qEtFJ5qWoA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:457416420906:android:6d6ccf7fd91682e0371d53",
+        "android_client_info": {
+          "package_name": "com.example.untitled10"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBBPGpMPisf55HAcReMQN_u9qEtFJ5qWoA"
         }
       ],
       "services": {

@@ -11,7 +11,7 @@ class DioHelper{
   static init(){
     dio=Dio(
         BaseOptions(
-          baseUrl: 'https://fcm.googleapis.com/',
+          baseUrl: 'http://arshdny.runasp.net/api/',
           receiveDataWhenStatusError: true,
 
         )
@@ -24,20 +24,17 @@ class DioHelper{
     required String url,
     Map<String,dynamic>? query,
     String lang='en',
-    String? token,
+
   })async{
-    print (token);
     try{
       dio.options.headers = {
-        'Authorization' : 'Bearer $token',
-        'Content-Type': 'application/json',
+
         "Accept":"application/json"
       };
       return await dio.get(url,queryParameters: query,options:Options (
         validateStatus: (_) => true,
         contentType: Headers.jsonContentType,
         responseType:ResponseType.json,
-
       ));
     }catch(error){
       print(error.toString());
@@ -46,22 +43,21 @@ class DioHelper{
   }
 
   static Future<Response> postData({
-     String? url,
+    required String url,
     Map<String,dynamic>? query,
     dynamic data,
     String lang='en',
-    String? token,
+
   })async{
     try{
       dio.options.headers = {
-        'Content-Type': 'application/json',
-        'Authorization': 'key=AAAA6KXkzOk:APA91bFrhdHAUE5mI-ruovQ5mTYxvnU2OTM0kO6j6LBgURiGALM9BakFgT_xrILDVlK9BMjaC3ZC3pwiO52wlMKzIERXYzP0t9zul3hljKVaNSVXZyJk9--vJ25EKUmvKVFj-ld8BYQC'
+
+        "Accept":"application/json"
       };
-      return   await dio.post(url!,queryParameters: query,data: data,options:Options (
+      return   await dio.post(url,queryParameters: query,data: data,options:Options (
         validateStatus: (_) => true,
         contentType: Headers.jsonContentType,
         responseType:ResponseType.json,
-
       ));
     }catch(error){
       print(error.toString());
@@ -80,8 +76,7 @@ class DioHelper{
       ) async {
     try{
       dio.options.headers = {
-        'Authorization' : 'Bearer $token',
-
+        'Authorization' : 'bearer $token',
       };
       Response response = await dio.put(
         url,
@@ -99,11 +94,11 @@ class DioHelper{
     Map<String,dynamic>? query,
     dynamic data,
     String lang='en',
-    String? token,
+
   })async{
     try{
       dio.options.headers = {
-        'Authorization' : 'Bearer $token',
+
       };
       return await dio.delete(url,queryParameters: query,data: data);
     }catch(error){

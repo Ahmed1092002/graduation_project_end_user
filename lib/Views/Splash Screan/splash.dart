@@ -3,7 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:graduation_project_end_user/Views/MainScrean/View/main_Screen.dart';
+import 'package:graduation_project_end_user/main.dart';
+import 'package:graduation_project_end_user/utils/cashe_helper.dart';
 import 'package:hive/hive.dart';
+
+import '../Login_View/login_page.dart';
 
 
 
@@ -20,9 +24,10 @@ class _SecondClassState extends State<SecondClass>
   double _opacity = 0;
   bool _value = true;
   final storage = new FlutterSecureStorage();
+  var box = Hive.box(boxName);
 
   var Token;
-  var userTypes;
+  var refugeeId;
   Widget? route;
 
   @override
@@ -35,24 +40,21 @@ class _SecondClassState extends State<SecondClass>
     )..addStatusListener(
           (status) async {
 
-        // Token = await storage.read(key: 'uid');
-        // userTypes = await Hive.box(boxName).get('userType');
-        // print ("user type $userTypes");
-        // print (Token);
-        //
-        // if (Token != null  ) {
-        //   if (userTypes == 'users') {
-        //     route=  MainScrean();
-        //   } else if (userTypes == 'company') {
-        //     route= CompanyMainScrean();
-        //   } else if (userTypes == null) {
-        //     route=  LoginScrean();
-        //   }
-        //
-        // }else{
-        //   route=  LoginScrean();
-        // }
-route= MainScrean();
+
+        // refugeeId = await Hive.box(boxName).get('refugeeId');
+        refugeeId = await CashHelper.getData(key: 'refugeeId');
+
+print (refugeeId);
+
+        if (refugeeId != null) {
+
+          route = MainScrean();
+
+
+        }else{
+          route=  login_page();
+        }
+// route= login_page();
         if (status == AnimationStatus.completed) {
 
           Navigator.of(context).pushReplacement(

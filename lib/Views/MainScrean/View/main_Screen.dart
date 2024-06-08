@@ -1,12 +1,28 @@
+
+
 import 'package:flutter/material.dart';
 import 'package:flutter_advanced_drawer/flutter_advanced_drawer.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:graduation_project_end_user/Blocs/localizationCubit/localization_cubit.dart';
+import 'package:graduation_project_end_user/Views/FeedbacksView/feedbacks_view.dart';
+import 'package:graduation_project_end_user/Views/Login_View/login_page.dart';
 import 'package:graduation_project_end_user/Views/MainScrean/widgets/chat_bot_card.dart';
 import 'package:graduation_project_end_user/Views/MainScrean/widgets/chat_groub_card.dart';
+import 'package:graduation_project_end_user/Views/MainScrean/widgets/main_componant.dart';
+import 'package:graduation_project_end_user/Views/ProfilePage/ProfilePAge/profile_page.dart';
+import 'package:graduation_project_end_user/Views/SittingView/setting_view.dart';
+import 'package:graduation_project_end_user/Views/jobView/applyed_job_view.dart';
+import 'package:graduation_project_end_user/Views/jobView/list_of_job_view.dart';
+import 'package:graduation_project_end_user/main.dart';
+import 'package:graduation_project_end_user/utils/cashe_helper.dart';
+import 'package:hive/hive.dart';
 
 import '../../../generated/l10n.dart';
+import '../../../utils/navigator.dart';
+import '../../Culture_content/content_view.dart';
+import '../../HelpingRequest/helping_view.dart';
+import '../../chat_bot_view/View/chat_bot_page.dart';
 
 
 class MainScrean extends StatefulWidget {
@@ -25,6 +41,7 @@ class _MainScreanState extends State<MainScrean> {
     // _advancedDrawerController.value = AdvancedDrawerValue.visible();
     _advancedDrawerController.showDrawer();
   }
+  var box = Hive.box(boxName);
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<LocalizationCubit, LocalizationState>(
@@ -94,27 +111,44 @@ class _MainScreanState extends State<MainScrean> {
                     ),
                   ),
                   ListTile(
-                    onTap: () {},
+                    onTap: () {
+navigateToScreen(context, MainScrean());
+                    },
                     leading: Icon(Icons.home),
                     title: Text(S.of(context).Home,style: TextStyle(fontSize: 15.sp),),
                   ),
+
                   ListTile(
-                    onTap: () {},
-                    leading: Icon(Icons.account_circle_rounded),
-                    title: Text(S.of(context).Profile,style: TextStyle(fontSize: 15.sp),),
+                    onTap: () {
+                      navigateToScreen(context, FeedbacksView());
+                    },
+                    leading: Icon(Icons.feedback),
+                    title: Text(S.of(context).FeedBack),
                   ),
                   ListTile(
-                    onTap: () {},
-                    leading: Icon(Icons.favorite),
-                    title: Text('Favourites'),
-                  ),
-                  ListTile(
-                    onTap: () {},
+                    onTap: () {
+                      navigateToScreen(context, SettingView());
+                    },
                     leading: Icon(Icons.settings),
                     title: Text(S.of(context).Settings,style: TextStyle(fontSize: 15.sp),),
                   ),
                   ListTile(
                     onTap: () {
+                      navigateToScreen(context, ApplyedJobView());
+                    },
+                    leading: Icon(Icons.work),
+                    title: Text(S.of(context).yourAppliedJobs,style: TextStyle(fontSize: 15.sp),),
+                  ),
+                  ListTile(
+                    onTap: () {
+                navigateToScreen(context, ProfilePage());
+                    },
+                    leading: Icon(Icons.work),
+                    title: Text(S.of(context).ProfilePage,style: TextStyle(fontSize: 15.sp),),
+                  ),
+
+                  ListTile(
+                    onTap: ()  {
                       setState(() {
                         cubit.ChangeLanguageConndation();
                       });
@@ -127,7 +161,16 @@ class _MainScreanState extends State<MainScrean> {
                         ? Text('English',style: TextStyle(fontSize: 15.sp),)
                         : Text('العربية',style: TextStyle(fontSize: 15.sp)  ) ,
                   ),
+                  ListTile(
+                    onTap: () async {
+                      // await box.clear();
+                      await CashHelper.clearData();
+                      navigateToScreenAndExit(context, login_page());
 
+                    },
+                    leading: Icon(Icons.logout),
+                    title: Text(S.of(context).Logout),
+                  ),
 
 
 
@@ -176,6 +219,7 @@ class _MainScreanState extends State<MainScrean> {
 
           ),
           body: Container(
+            color: Colors.white,
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height,
             child: SingleChildScrollView(
@@ -192,7 +236,39 @@ class _MainScreanState extends State<MainScrean> {
                           crossAxisCount: 2, childAspectRatio: 1.5),
                       children: [
                         ChatBotCard(),
-                        ChatGroubCard(),
+                        ChatGroubCard(
+
+                        ),
+                        MainComponent(
+                          color: Color(0xFF0C7AB7),
+                          title: S.of(context).Cultures_And_Content,
+                          image: 'assets/image/society.png',
+                          onTap: () {
+                            navigateToScreen(context, ContentView());
+                          },
+
+                        ),
+                        MainComponent(
+                          color: Color(0xFF0C7AB7),
+                          title: S.of(context).job,
+                          image: 'assets/image/business.png',
+                          onTap: () {
+                            navigateToScreen(context, ListOfJobView());
+                          },
+
+                        ),
+                        MainComponent(
+                          color: Color(0xFF0C7AB7),
+                          title:S.of(context).RequestHelp,
+                          image: 'assets/image/request.png',
+                          onTap: () {
+                            navigateToScreen(context, HelpingView());
+
+                          }
+                        ),
+
+
+
                       ],
                     ),
                   ),

@@ -22,10 +22,72 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "Address": MessageLookupByLibrary.simpleMessage("العنوان"),
+        "Birthday": MessageLookupByLibrary.simpleMessage("تاريخ الميل"),
+        "CV": MessageLookupByLibrary.simpleMessage("السيرة الذاتية"),
+        "CardEndDate": MessageLookupByLibrary.simpleMessage("تاريخ نهاية"),
+        "CardStartDate":
+            MessageLookupByLibrary.simpleMessage("تاريخ بداية البطاقة"),
+        "Change_Language": MessageLookupByLibrary.simpleMessage("تغيير اللغة"),
+        "Change_Password":
+            MessageLookupByLibrary.simpleMessage("تغيير كلمة المرور"),
+        "Change_Refugee":
+            MessageLookupByLibrary.simpleMessage("نغيير معومات الاجئ"),
         "Chat_Ai": MessageLookupByLibrary.simpleMessage("الدردشة الذكية"),
+        "Country": MessageLookupByLibrary.simpleMessage("الدولة"),
+        "Cultures_And_Content":
+            MessageLookupByLibrary.simpleMessage("الثقافات والمحتوى"),
+        "Dont_have_an_account":
+            MessageLookupByLibrary.simpleMessage("ليس لديك حساب؟"),
+        "Email": MessageLookupByLibrary.simpleMessage("البريد الالكتروني"),
+        "Failed": MessageLookupByLibrary.simpleMessage("فشل"),
+        "Female": MessageLookupByLibrary.simpleMessage("انثى"),
+        "FirstName": MessageLookupByLibrary.simpleMessage("الاسم الاول"),
+        "Forgot_Password":
+            MessageLookupByLibrary.simpleMessage("نسيت كلمة المرور"),
+        "Gender": MessageLookupByLibrary.simpleMessage("الجنس"),
         "Home": MessageLookupByLibrary.simpleMessage("الرئيسية"),
+        "LastName": MessageLookupByLibrary.simpleMessage("الاسم الاخير"),
+        "Login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
+        "Login_with_Facebook":
+            MessageLookupByLibrary.simpleMessage("تسجيل الدخول بالفيسبوك"),
+        "Login_with_Google":
+            MessageLookupByLibrary.simpleMessage("تسجيل الدخول بالجوجل"),
+        "Logout": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
+        "Male": MessageLookupByLibrary.simpleMessage("ذكر"),
+        "Next": MessageLookupByLibrary.simpleMessage("التالي"),
+        "NoCVuploaded":
+            MessageLookupByLibrary.simpleMessage("لم يتم رفع السيرة الذاتية"),
+        "Password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
+        "PhoneNumber": MessageLookupByLibrary.simpleMessage("رقم الهاتف"),
+        "PickPDF": MessageLookupByLibrary.simpleMessage("اختر ملف PDF"),
+        "Pleaseenter": MessageLookupByLibrary.simpleMessage("من فضلك ادخل"),
+        "Pleasefillallields":
+            MessageLookupByLibrary.simpleMessage("من فضلك املئ كل البيانات"),
         "Profile": MessageLookupByLibrary.simpleMessage("الصفحة الشخصية"),
+        "ProfilePage": MessageLookupByLibrary.simpleMessage("صفحة الشخصية"),
+        "RefugeeCardNo": MessageLookupByLibrary.simpleMessage("رقم البطاقة"),
+        "Refugee_inf": MessageLookupByLibrary.simpleMessage("معلومات اللاجئ"),
+        "Register": MessageLookupByLibrary.simpleMessage("تسجيل"),
+        "RequestHelp": MessageLookupByLibrary.simpleMessage("طلب مساعدة"),
+        "Setting": MessageLookupByLibrary.simpleMessage("الاعدادات"),
         "Settings": MessageLookupByLibrary.simpleMessage("الاعدادات"),
-        "Society": MessageLookupByLibrary.simpleMessage("المجتمع")
+        "ShowYourCv":
+            MessageLookupByLibrary.simpleMessage("عرض السيرة الذاتية"),
+        "Society": MessageLookupByLibrary.simpleMessage("المجتمع"),
+        "Upload": MessageLookupByLibrary.simpleMessage("رفع السيرة الذاتية"),
+        "UserInformation":
+            MessageLookupByLibrary.simpleMessage(" معلومات الشخصية"),
+        "User_Name": MessageLookupByLibrary.simpleMessage("اسم المستخدم"),
+        "edit": MessageLookupByLibrary.simpleMessage("تعديل"),
+        "enter_your_request": MessageLookupByLibrary.simpleMessage("ادخل طلبك"),
+        "groub_chat": MessageLookupByLibrary.simpleMessage("دردشة جماعية"),
+        "job": MessageLookupByLibrary.simpleMessage("وظائف لك"),
+        "personal_information":
+            MessageLookupByLibrary.simpleMessage("المعلومات الشخصية"),
+        "send_feedback": MessageLookupByLibrary.simpleMessage(" ارسل تعليقك"),
+        "successfully": MessageLookupByLibrary.simpleMessage("تم بنجاح"),
+        "yourAppliedJobs":
+            MessageLookupByLibrary.simpleMessage("الوظائف التي قدمت عليها")
       };
 }

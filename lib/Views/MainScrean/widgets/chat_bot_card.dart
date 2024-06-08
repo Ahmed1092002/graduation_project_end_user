@@ -9,7 +9,6 @@ import '../../chat_bot_view/widget/gradient_text.dart';
 
 class ChatBotCard extends StatelessWidget {
    ChatBotCard({Key? key}) : super(key: key);
-  ColorsData colorsData = ColorsData(); 
   @override
   Widget build(BuildContext context) {
     return InkWell(

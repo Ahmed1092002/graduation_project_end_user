@@ -40,7 +40,7 @@ class LocalizationCubit extends Cubit<LocalizationState> {
     return Intl.getCurrentLocale() == 'en_US';
   }
 
-  void ChangeLanguageConndation() async {
+   ChangeLanguageConndation() async {
     emit(ChangeLanguageLoadingState());
     if (isArabic()) {
    await   changeLanguage(Locale('en', 'US'));

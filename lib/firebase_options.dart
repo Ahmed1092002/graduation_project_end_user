@@ -27,10 +27,7 @@ class DefaultFirebaseOptions {
       case TargetPlatform.macOS:
         return macos;
       case TargetPlatform.windows:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for windows - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return windows;
       case TargetPlatform.linux:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for linux - '
@@ -44,37 +41,47 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyBKRCGpQc4FISQtcJ4hRFQ2CQfBOoIqL7g',
-    appId: '1:323139323227:web:b86d7d02cee647bae8867e',
-    messagingSenderId: '323139323227',
-    projectId: 'refugee-d38eb',
-    authDomain: 'refugee-d38eb.firebaseapp.com',
-    storageBucket: 'refugee-d38eb.appspot.com',
+    apiKey: 'AIzaSyCdFa1SM0D8Z3qw4Rh_AcCok7GsgvmUc40',
+    appId: '1:457416420906:web:86c700fd3b96b28a371d53',
+    messagingSenderId: '457416420906',
+    projectId: 'newjop-1e222',
+    authDomain: 'newjop-1e222.firebaseapp.com',
+    storageBucket: 'newjop-1e222.appspot.com',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyCA_MGPRfagMsUcJNdRtgL0XNfHgEQfnBA',
-    appId: '1:323139323227:android:3cfd8c5f1e6145efe8867e',
-    messagingSenderId: '323139323227',
-    projectId: 'refugee-d38eb',
-    storageBucket: 'refugee-d38eb.appspot.com',
+    apiKey: 'AIzaSyBBPGpMPisf55HAcReMQN_u9qEtFJ5qWoA',
+    appId: '1:457416420906:android:83ef69e1fef4aa78371d53',
+    messagingSenderId: '457416420906',
+    projectId: 'newjop-1e222',
+    storageBucket: 'newjop-1e222.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyDWcW2zUB2RZOYUypvt9KIVQAS5qdXCVaM',
-    appId: '1:323139323227:ios:236d44a4c430adfde8867e',
-    messagingSenderId: '323139323227',
-    projectId: 'refugee-d38eb',
-    storageBucket: 'refugee-d38eb.appspot.com',
+    apiKey: 'AIzaSyC-e9C2tnEUGhYNkj6y9GtZo5yybmMgQyU',
+    appId: '1:457416420906:ios:4c83e7032d0ce9c9371d53',
+    messagingSenderId: '457416420906',
+    projectId: 'newjop-1e222',
+    storageBucket: 'newjop-1e222.appspot.com',
     iosBundleId: 'com.example.graduationProjectEndUser',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyDWcW2zUB2RZOYUypvt9KIVQAS5qdXCVaM',
-    appId: '1:323139323227:ios:00af856396edf0bce8867e',
-    messagingSenderId: '323139323227',
-    projectId: 'refugee-d38eb',
-    storageBucket: 'refugee-d38eb.appspot.com',
-    iosBundleId: 'com.example.graduationProjectEndUser.RunnerTests',
+    apiKey: 'AIzaSyC-e9C2tnEUGhYNkj6y9GtZo5yybmMgQyU',
+    appId: '1:457416420906:ios:4c83e7032d0ce9c9371d53',
+    messagingSenderId: '457416420906',
+    projectId: 'newjop-1e222',
+    storageBucket: 'newjop-1e222.appspot.com',
+    iosBundleId: 'com.example.graduationProjectEndUser',
   );
+
+  static const FirebaseOptions windows = FirebaseOptions(
+    apiKey: 'AIzaSyCdFa1SM0D8Z3qw4Rh_AcCok7GsgvmUc40',
+    appId: '1:457416420906:web:9997284e99dfa81a371d53',
+    messagingSenderId: '457416420906',
+    projectId: 'newjop-1e222',
+    authDomain: 'newjop-1e222.firebaseapp.com',
+    storageBucket: 'newjop-1e222.appspot.com',
+  );
+
 }
