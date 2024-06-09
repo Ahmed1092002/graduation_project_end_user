@@ -25,7 +25,7 @@ class LoginCubit extends Cubit<LoginState> {
       if (response.statusCode == 200) {
         print (response.data);
         loginModel = LoginModel.fromJson(response.data);
-     // await   getPersonById(loginModel!.personId!);
+     await   getPersonById(loginModel!.personId!);
      //  await   getCountryById(loginModel!.countryId!);
 
 
@@ -66,59 +66,59 @@ await getUserByID();
       emit(LoginErrorState());
     }
   }
-  // PersonModel? personModel;
-  // getPersonById(int id) async {
-  //   emit(GetPersonByIdLoading());
-  //   try {
-  //     final response = await DioHelper.getData(url: "/People/$id");
-  //     if (response.statusCode == 200) {
-  //        personModel = PersonModel.fromJson(response.data);
-  //        // await box.put('firstName', personModel!.firstName);
-  //        //  await box.put('lastName', personModel!.lastName);
-  //        //  await box.put('email', personModel!.email);
-  //        //  await box.put('phone', personModel!.phone1);
-  //        //  await box.put('address', personModel!.address);
-  //
-  //         await CashHelper.saveData(key: 'firstName', value: personModel!.firstName);
-  //         await CashHelper.saveData(key: 'lastName', value: personModel!.lastName);
-  //         await CashHelper.saveData(key: 'email', value: personModel!.email);
-  //         await CashHelper.saveData(key: 'phone', value: personModel!.phone1);
-  //
-  //
-  //       emit(GetPersonByIdSuccess(
-  //
-  //       ));
-  //     } else {
-  //       print(response.statusCode);
-  //       emit(GetPersonByIdError());
-  //     }
-  //   } catch (error) {
-  //     emit(GetPersonByIdError());
-  //   }
-  //
-  // }
-  //
-  // CountryModel? countryModel;
-  // getCountryById(int id) async {
-  //   emit(GetCountryByIdLoading());
-  //   try {
-  //     final response = await DioHelper.getData(url: "/Countries/$id");
-  //     if (response.statusCode == 200) {
-  //
-  //       countryModel = CountryModel.fromJson(response.data);
-  //       // await box.put('countryName', countryModel!.countryName);
-  //       await CashHelper.saveData(key: 'countryName', value: countryModel!.countryName);
-  //       emit(GetCountryByIdLoaded(
-  //
-  //       ));
-  //     } else {
-  //       print(response.statusCode);
-  //       emit(GetCountryByIdError());
-  //     }
-  //   } catch (error) {
-  //     emit(GetCountryByIdError());
-  //   }
-  // }
+  PersonModel? personModel;
+  getPersonById(int id) async {
+    emit(GetPersonByIdLoading());
+    try {
+      final response = await DioHelper.getData(url: "/People/$id");
+      if (response.statusCode == 200) {
+         personModel = PersonModel.fromJson(response.data);
+         // await box.put('firstName', personModel!.firstName);
+         //  await box.put('lastName', personModel!.lastName);
+         //  await box.put('email', personModel!.email);
+         //  await box.put('phone', personModel!.phone1);
+         //  await box.put('address', personModel!.address);
+
+          await CashHelper.saveData(key: 'firstName', value: personModel!.firstName);
+          await CashHelper.saveData(key: 'lastName', value: personModel!.lastName);
+          await CashHelper.saveData(key: 'email', value: personModel!.email);
+          await CashHelper.saveData(key: 'phone', value: personModel!.phone1);
+
+
+        emit(GetPersonByIdSuccess(
+
+        ));
+      } else {
+        print(response.statusCode);
+        emit(GetPersonByIdError());
+      }
+    } catch (error) {
+      emit(GetPersonByIdError());
+    }
+
+  }
+
+  CountryModel? countryModel;
+  getCountryById(int id) async {
+    emit(GetCountryByIdLoading());
+    try {
+      final response = await DioHelper.getData(url: "/Countries/$id");
+      if (response.statusCode == 200) {
+
+        countryModel = CountryModel.fromJson(response.data);
+        // await box.put('countryName', countryModel!.countryName);
+        await CashHelper.saveData(key: 'countryName', value: countryModel!.countryName);
+        emit(GetCountryByIdLoaded(
+
+        ));
+      } else {
+        print(response.statusCode);
+        emit(GetCountryByIdError());
+      }
+    } catch (error) {
+      emit(GetCountryByIdError());
+    }
+  }
   UserModel ? userModel;
 getUserByID()async {
   emit(GetUserByIdLoading());

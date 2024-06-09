@@ -61,7 +61,7 @@ if (state is LoginSuccessState) {
       appBar: AppBar(backgroundColor: Colors.white, actions: <Widget>[
         BlocConsumer<LocalizationCubit, LocalizationState>(
   listener: (context, state) {
-    // TODO: implement listener
+
   },
   builder: (context, state) {
     var localizationcubit = LocalizationCubit.get(context);
@@ -143,7 +143,7 @@ if (state is LoginSuccessState) {
                       email: emailController.text,
                       password: passwordController.text,
                     );
-                    if (loginCubit.state is LoginSuccessState){
+                    if (loginCubit.state is LoginSuccessState || loginCubit.loginModel!=null || loginCubit.userModel!=null|| loginCubit.personModel!=null){
                       navigateToScreenAndExit(context, MainScrean());
                   }
 },
