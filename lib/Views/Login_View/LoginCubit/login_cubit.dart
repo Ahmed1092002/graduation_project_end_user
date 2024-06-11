@@ -26,15 +26,7 @@ class LoginCubit extends Cubit<LoginState> {
         print (response.data);
         loginModel = LoginModel.fromJson(response.data);
      await   getPersonById(loginModel!.personId!);
-     //  await   getCountryById(loginModel!.countryId!);
 
-
-        // await box.put('refugeeId', loginModel!.refugeeId);
-        // await box.put('personId', loginModel!.personId);
-        // await box.put('userId', loginModel!.userId);
-        // await box.put('countryId', loginModel!.countryId);
-        // await box.put('cv', loginModel!.cv);
-        // await box.put('imagePath', loginModel!.imagePath);
 
         await CashHelper.saveData(key: 'refugeeId', value: loginModel!.refugeeId);
         await CashHelper.saveData(key: 'personId', value: loginModel!.personId);
@@ -45,10 +37,7 @@ class LoginCubit extends Cubit<LoginState> {
 
 
 
-        // String ?firstName = await box.get("firstName").toString();
-        // String ?lastName = await box.get("lastName").toString();
-        // int ?countryId = await box.get("countryId");
-        // int ?refugeeId = await box.get('refugeeId');
+
 
 
 
@@ -61,7 +50,6 @@ await getUserByID();
         emit(LoginErrorState());
       }
 
-      emit(LoginSuccessState());
     } catch (e) {
       emit(LoginErrorState());
     }

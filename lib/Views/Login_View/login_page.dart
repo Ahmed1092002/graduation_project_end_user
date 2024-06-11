@@ -143,7 +143,21 @@ if (state is LoginSuccessState) {
                       email: emailController.text,
                       password: passwordController.text,
                     );
-                    if (loginCubit.state is LoginSuccessState || loginCubit.loginModel!=null || loginCubit.userModel!=null|| loginCubit.personModel!=null){
+                    if (State is LoginErrorState || loginCubit.loginModel==null || loginCubit.userModel==null|| loginCubit.personModel==null )
+                    {
+                       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                        content: Text('Error',
+                          style: TextStyle(
+                            color: Colors.red,
+                            fontSize: 20,
+                          ) ,),
+                        backgroundColor: Colors.red,
+                      ));
+
+
+
+                    }
+                    if (State is LoginSuccessState || loginCubit.loginModel!=null || loginCubit.userModel!=null|| loginCubit.personModel!=null){
                       navigateToScreenAndExit(context, MainScrean());
                   }
 },

@@ -97,6 +97,7 @@ if (state is EditPersonLoadingState)
                   }
                   if (_formKey.currentState!.validate())  {
                     _formKey.currentState!.save();
+
                     PersonModel personModel = PersonModel(
                       firstName: _firstNameController.text,
                       lastName: _lastNameController.text,
